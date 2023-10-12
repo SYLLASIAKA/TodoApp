@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="./js/main.js" type="module" defer></script>
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+</head>
+
+<body>
+    <header>
+        <h1 class="title">Todo App</h1>
+    </header>
+
+    <main>
+        <div class="button__container">
+            <button class="button__1">Append</button>
+            <button class="button__2">Search</button>
+            <button class="button__3">TotalS</button>
+        </div>
+
+        <form class="form__container">
+            <i class="fa fa-close" id="closeForm"></i>
+            <h3>Add An Item</h3>
+            <input type="text" id="addNameInput" placeholder="name">
+            <input type="text" id="addCategoryInput" placeholder="category">
+            <input type="submit" id="submitInput" value="Add" disabled>
+        </form>
+
+        <section class="section__container">
+            <div class="stats__div">
+                <i class="fa fa-close" id="closeStats"></i>
+                <aside class="stats">
+
+
+                </aside>
+            </div>
+            <aside class="options">
+                <i class="fa fa-close" id="closeOption"></i>
+                <label for="filter">Filter</label>
+                <select id="filter">
+
+                </select>
+                <Label for="search">Search</Label>
+                <input type="text" id="search" placeholder="search for an item...">
+            </aside>
+        </section>
+
+        <div class="row">
+            <h2>Todos</h2> <i class="fas fa-trash"></i>
+        </div>
+        <hr>
+
+        <ul>
+
+        </ul>
+
+        <div class="pages">
+            <i class="fa-solid fa-chevron-left"></i>
+            <span class="navigatePage"> <b></b> - <b></b></span>
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+    </main>
+</body>
+
+</html>

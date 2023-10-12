@@ -1,0 +1,461 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap');
+
+/*=============== CSS VARIABLES ===============*/
+:root {
+
+    /*========= Colors =========*/
+
+    /* Color ) */
+    --title-background: linear-gradient(to bottom, #2d92f7, #05325a);
+    --text-white: #fff;
+    --bg-light: rgb(230, 19, 19);
+    --primary: rgb(0, 0, 0);
+    --todo: rgb(236, 236, 236);
+
+    /*========= Font and Typography =========*/
+    --body-font: 'Open Sans', sans-serif;
+    --second-font: 'Poppins', sans-serif;
+
+    --big-font-size: 56px;
+    --h1-font-size: 50px;
+    --h2-font-size: 32px;
+    --h3-font-size: 24px;
+    --large-font-size: 18px;
+    --normal-font-size: 16px;
+    --small-font-size: 15px;
+    --smaller-font-size: 14px;
+    --tiny-font-size: 12px;
+
+    /*========= Font Weight =========*/
+    --weight-400: 400;
+    --weight-500: 500;
+    --weight-600: 600;
+    --weight-700: 700;
+    --weight-800: 800;
+
+}
+
+/* Responsive typography */
+@media screen and (max-width: 1200px) {
+    :root {
+        --big-font-size: 36px;
+        --h1-font-size: 32px;
+        --h2-font-size: 24px;
+        --h3-font-size: 20px;
+        --large-font-size: 16px;
+        --normal-font-size: 15px;
+        --small-font-size: 14px;
+        --smaller-font-size: 13px;
+        --tiny-font-size: 11px;
+    }
+}
+
+/*=============== BASE ===============*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--second-font);
+}
+
+/*==================== header ====================*/
+header {
+    background: var(--title-background);
+    text-align: center;
+    color: var(--text-white);
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+main {
+    max-width: 768px;
+    margin: 67px auto;
+    padding: 0 20px;
+}
+
+.button__container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.button__1,
+.button__2,
+.button__3 {
+    background: linear-gradient(to bottom, #b6940b, #ff9900);
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: var(--large-font-size);
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button__1 {
+    background: linear-gradient(to bottom, #3050f0, #0938e3);
+}
+
+.button__3 {
+    background: linear-gradient(to bottom, #e92747, #e71131);
+}
+
+.button__1:hover {
+    background: linear-gradient(to bottom, #1d50e7, #032a5d);
+}
+
+.button__2:hover {
+    background: linear-gradient(to bottom, #ff9900, #793203);
+}
+
+.button__3:hover {
+    background: linear-gradient(to bottom, #ec2828, #62030e);
+}
+
+.form__container {
+    display: none;
+}
+
+.options {
+    display: none;
+}
+
+.stats__div {
+    display: none;
+}
+
+/*===================== todos =====================*/
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fas {
+    line-height: -10px;
+}
+
+h2 {
+    color: var(--primary);
+}
+
+.fa-trash {
+    color: var(--primary);
+}
+
+.fa-trash:hover {
+    scale: 1.2;
+    cursor: pointer;
+    filter: brightness(1.2)
+}
+
+hr {
+    border-color: var(--primary);
+    margin-bottom: .6rem;
+}
+
+/* LIST */
+ul {
+    list-style: none;
+    overflow: auto;
+}
+
+ul>li {
+    position: relative;
+    width: 100%;
+    background-color: var(--todo);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.fa-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: var(--bg-light);
+}
+
+.fa-close:hover {
+    scale: 1.2;
+    cursor: pointer;
+    color: var(--primary)
+}
+
+ul>li>span {
+    color: var(--bg-dark);
+    font-weight: var(--weight-800);
+}
+
+
+/* PAGES */
+.pages {
+    margin: auto;
+    width: 120px;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    color: var(--primary);
+    margin-bottom: .6rem;
+}
+
+.fa-solid:hover {
+    cursor: pointer;
+    scale: 1.2;
+    filter: brightness(1.75);
+}
+
+/* =========================== form_container ======================== */
+.form__container {
+    width: 500px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.478);
+    z-index: 200;
+    animation: style 0.5s;
+}
+
+@keyframes style {
+    0% {
+        top: -20%;
+    }
+
+    100% {
+        top: 50%;
+    }
+}
+
+#closeForm,
+#closeOption,
+#closeStats {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+.form__container h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.form__container input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#submitInput {
+    background: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+#submitInput:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* ============================= search ============================= */
+.options {
+    width: 500px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.478);
+    z-index: 200;
+    animation: style 0.5s;
+}
+
+.options label,
+.options select,
+.options input {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#filter,
+#search {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#filter {
+    background: #fff;
+    color: #333;
+    font-size: 16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#filter option {
+    font-size: 14px;
+}
+
+/* ===================================== stats ===================================== */
+
+
+.stats__div {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ffffff;
+    text-align: center;
+    width: 500px;
+    z-index: 200;
+    animation: style 0.5s;
+}
+
+.stats div:first-child {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.stats div:first-child b {
+    color: red;
+}
+
+.stats div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stats span {
+    background-color: rgba(0, 0, 0, 0.093);
+    padding: 10px;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+/* ============================== responsive ===================================== */
+
+@media screen and (max-width: 600px) {
+    .form__container {
+        width: 400px;
+    }
+
+    .options {
+        width: 400px;
+    }
+
+    .stats__div {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .form__container {
+        width: 350px;
+    }
+
+    .options {
+        width: 350px;
+    }
+
+    .stats__div {
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .form__container {
+        width: 300px;
+    }
+
+    .options {
+        width: 300px;
+    }
+
+    .stats__div {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .form__container {
+        width: 270px;
+    }
+
+    .options {
+        width: 270px;
+    }
+
+    .stats__div {
+        width: 270px;
+    }
+
+    .button__1,
+    .button__2,
+    .button__3 {
+        padding-inline: 10px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .form__container {
+        width: 230px;
+    }
+
+    .options {
+        width: 230px;
+    }
+
+    .stats__div {
+        width: 230px;
+    }
+}
+
+@media screen and (max-width: 270px) {
+    .form__container {
+        width: 200px;
+    }
+
+    .options {
+        width: 200px;
+    }
+
+    .stats__div {
+        width: 200px;
+    }
+}
